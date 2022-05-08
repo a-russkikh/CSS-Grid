@@ -1,3 +1,8 @@
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
 .grid * {
   padding: 10px 15px;
   background-color: rgb(96, 143, 204);
@@ -10,10 +15,25 @@
 /* Grid */
 
 .grid {
+  height: 100%;
   display: grid;
-  grid-template-columns: 200px 1fr 1fr;
-  grid-template-rows: 100px 100px 100px;
-  /* grid-column-gap: 30px;
-  grid-row-gap: 20px; */
-  grid-gap: 50px 30px;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: 100px 1fr 100px;
+  grid-gap: 20px;
+  grid-template-areas:
+    "header header"
+    "aside main"
+    "aside footer";
+}
+header {
+  grid-area: header;
+}
+aside {
+  grid-area: aside;
+}
+main {
+  grid-area: main;
+}
+footer {
+  grid-area: footer;
 }
